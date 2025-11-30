@@ -1,65 +1,140 @@
+"use client";
+
+import { useRef } from "react";
+import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Hero from "@/components/ui/Hero";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+
+const clients = [
+  "TechCorp", "InnovateX", "FutureScale", "DataFlow", "CloudNine", "SecureNet"
+];
 
 export default function Home() {
+  const containerRef = useRef(null);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="bg-nuvix-dark min-h-screen" ref={containerRef}>
+      <Hero />
+
+      {/* Trust/Clients Section */}
+      <section className="py-12 border-b border-white/5 bg-white/[0.02]">
+        <div className="container mx-auto px-6">
+          <p className="text-center text-sm text-gray-500 uppercase tracking-widest mb-8">Trusted by Industry Leaders</p>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+            {clients.map((client, i) => (
+              <span key={i} className="text-xl font-bold text-white/40 hover:text-white transition-colors cursor-default">
+                {client}
+              </span>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Introduction / Value Prop */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-5xl font-bold mb-8 leading-tight"
+            >
+              We bridge the gap between <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">visionary ideas</span> and reality.
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-gray-400 leading-relaxed"
+            >
+              NUVIX is a premium software consultancy specializing in high-performance web applications, cloud architecture, and digital transformation. We don't just write code; we engineer success.
+            </motion.p>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-32 bg-black/40 relative">
+        <div className="container mx-auto px-6">
+          <SectionHeading title="Client Stories" subtitle="What People Say" center />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            {[
+              {
+                quote: "NUVIX transformed our digital infrastructure. Their expertise and professionalism are unmatched.",
+                author: "Sarah Chen",
+                role: "CTO, TechFlow Inc."
+              },
+              {
+                quote: "Working with NUVIX was a game-changer. They delivered beyond our expectations.",
+                author: "Marcus Rodriguez",
+                role: "Founder, StartupX"
+              },
+              {
+                quote: "The team's technical depth and commitment to quality set them apart from everyone else.",
+                author: "Emily Watson",
+                role: "VP Engineering, DataCorp"
+              }
+            ].map((testimonial, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="p-8 rounded-2xl bg-white/5 border border-white/10 relative group hover:bg-white/10 transition-colors"
+              >
+                <div className="absolute top-6 right-6 text-nuvix-primary/20 group-hover:text-nuvix-primary/40 transition-colors text-6xl font-serif leading-none">"</div>
+                <p className="text-gray-300 mb-8 relative z-10 leading-relaxed">
+                  {testimonial.quote}
+                </p>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-nuvix-primary to-nuvix-accent flex items-center justify-center text-white font-bold text-sm mr-4">
+                    {testimonial.author[0]}
+                  </div>
+                  <div>
+                    <div className="font-bold text-white">{testimonial.author}</div>
+                    <div className="text-sm text-gray-400">{testimonial.role}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 relative overflow-hidden border-t border-white/10">
+        <div className="absolute inset-0 bg-gradient-to-b from-nuvix-dark to-nuvix-primary/10" />
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 text-white">
+              Ready to elevate your <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nuvix-accent to-nuvix-primary">digital presence?</span>
+            </h2>
+            <p className="text-xl text-gray-400 mb-12">
+              Let's discuss how we can help you achieve your business goals with our tailored software solutions.
+            </p>
+            <Link href="/contact">
+              <Button variant="primary" size="lg" className="px-12 py-6 text-lg shadow-2xl shadow-nuvix-primary/30">
+                Get in Touch
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
