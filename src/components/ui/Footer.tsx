@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Twitter, Linkedin, Github, Mail } from "lucide-react";
+import { Twitter, Linkedin, Github, Mail, Instagram } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -36,16 +36,13 @@ export default function Footer() {
                     <div>
                         <h3 className="font-semibold text-white mb-4">Connect</h3>
                         <div className="flex gap-4">
-                            <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-nuvix-primary transition-colors text-white">
-                                <Twitter size={18} />
+                            <a href="https://www.instagram.com/nuvix_25?igsh=MWhyZHhteTdya3p4" className="p-2 bg-white/5 rounded-full hover:bg-nuvix-primary transition-colors text-white">
+                                <Instagram size={18} />
                             </a>
                             <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-nuvix-primary transition-colors text-white">
                                 <Linkedin size={18} />
                             </a>
-                            <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-nuvix-primary transition-colors text-white">
-                                <Github size={18} />
-                            </a>
-                            <a href="#" className="p-2 bg-white/5 rounded-full hover:bg-nuvix-primary transition-colors text-white">
+                            <a href="mailto:nuvixai25@gmail.com" className="p-2 bg-white/5 rounded-full hover:bg-nuvix-primary transition-colors text-white">
                                 <Mail size={18} />
                             </a>
                         </div>

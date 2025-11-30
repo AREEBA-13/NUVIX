@@ -69,18 +69,18 @@ export default function Home() {
             {[
               {
                 quote: "NUVIX transformed our digital infrastructure. Their expertise and professionalism are unmatched.",
-                author: "Sarah Chen",
-                role: "CTO, TechFlow Inc."
+                author: "Dr.Umer Shoaib",
+                role: "Director Business Incubation Centre"
               },
               {
                 quote: "Working with NUVIX was a game-changer. They delivered beyond our expectations.",
-                author: "Marcus Rodriguez",
-                role: "Founder, StartupX"
+                author: "Usman Ali",
+                role: "Assistant Professor"
               },
               {
                 quote: "The team's technical depth and commitment to quality set them apart from everyone else.",
-                author: "Emily Watson",
-                role: "VP Engineering, DataCorp"
+                author: "Dr.Abdul Rehman",
+                role: "Supervisor"
               }
             ].map((testimonial, i) => (
               <motion.div

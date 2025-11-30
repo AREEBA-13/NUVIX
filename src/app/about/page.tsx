@@ -6,10 +6,10 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import { Users, Target, Zap } from "lucide-react";
 
 const stats = [
-    { label: "Years of Innovation", value: "10+" },
-    { label: "Global Clients", value: "500+" },
-    { label: "Projects Delivered", value: "1k+" },
-    { label: "Team Members", value: "50+" },
+    { label: "Years of Innovation", value: "2+" },
+    { label: "Global Clients", value: "20+" },
+    { label: "Projects Delivered", value: "30+" },
+    { label: "Team Members", value: "10+" },
 ];
 
 const values = [
@@ -116,7 +116,7 @@ export default function AboutPage() {
                                 className="space-y-6 text-gray-300 leading-relaxed"
                             >
                                 <p>
-                                    Founded in 2024, NUVIX emerged from a simple yet powerful idea: that technology should not just solve problems but inspire possibilities. What started as a small collective of passionate developers has grown into a global powerhouse of digital innovation.
+                                    Founded in 2025, NUVIX emerged from a simple yet powerful idea: that technology should not just solve problems but inspire possibilities. What started as a small collective of passionate developers has grown into a global powerhouse of digital innovation.
                                 </p>
                                 <p>
                                     We believe in the transformative power of code. Every line we write, every pixel we place, is a step towards a more connected, efficient, and beautiful digital world. Our mission is to empower businesses to transcend their limits through bespoke software solutions.

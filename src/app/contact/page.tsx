@@ -9,20 +9,18 @@ const contactInfo = [
     {
         icon: Mail,
         title: "Email Us",
-        details: "hello@nuvix.com",
-        subDetails: "Support: support@nuvix.com",
+        details: "nuvixai25@gmail.com",
     },
     {
         icon: Phone,
         title: "Call Us",
         details: "+1 (555) 123-4567",
-        subDetails: "Mon-Fri, 9am-6pm EST",
+        subDetails: "Mon-Fri, 9am-6pm",
     },
     {
         icon: MapPin,
         title: "Visit Us",
-        details: "123 Innovation Drive",
-        subDetails: "Tech City, TC 90210",
+        details: "University of Gujrat",
     },
 ];
 
